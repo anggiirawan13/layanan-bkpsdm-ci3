@@ -57,26 +57,57 @@
             return $res->result_array();
         }
 
-        public function getRekapBulananIzinBelajar($bln, $thn, $status = false, $pendidikan = false)
+        public function getRekapBulananIzinBelajar($bln, $thn, $status, $pendidikan)
         {
-            $sql = "SELECT u.*, i.*
-                    FROM izin_belajar i
-                    LEFT JOIN user u ON i.id_user = u.id_user
-                    where i.status_pengajuan = '". $status . "' AND i.jenjang_pendidikan = '" . $pendidikan . "' AND month(i.tgl_pengajuan) = " . $bln . " AND year(i.tgl_pengajuan) =" . $thn;
-            $res = $this->db->query($sql);
-            return $res->result_array();
+            $this->db->select('u.*, i.*');
+            $this->db->from('izin_belajar i');
+            $this->db->join('user u', 'i.id_user = u.id_user');
+            $this->db->where_not_in('i.status_pengajuan', 'MENUNGGU KONFIRMASI');
+
+            if ($bln !== "all") {
+                $this->db->where('month(i.tgl_pengajuan)', $bln);
+            }
+
+            if ($thn !== "all") {
+                $this->db->where('year(i.tgl_pengajuan)', $thn);
+            }
+
+            if ($status !== "all") {
+                $this->db->where('i.status_pengajuan', $status);
+            }
+
+            if ($pendidikan !== "all") {
+                $this->db->where('i.jenjang_pendidikan', $pendidikan);
+            }
+
+            return $this->db->get()->result_array();
         }
 
-        public function getRekapBulananPensiun($bln, $thn, $status = false, $gol = false)
+        public function getRekapBulananPensiun($bln, $thn, $status, $gol)
         {
-            $sql = "SELECT u.*, p.*, g.*
-                    FROM pensiun p
-                    LEFT JOIN user u ON p.id_user = u.id_user
-                    LEFT JOIN golongan g ON g.id_golongan = u.id_golongan
-                    where p.status_pengajuan = '". $status . "' AND g.id_golongan = '" . $gol . "' AND month(p.tgl_pengajuan) = " . $bln . " AND year(p.tgl_pengajuan) =" . $thn;
-            $res = $this->db->query($sql);
-            return $res->result_array();
+            $this->db->select('u.*, p.*, g.*');
+            $this->db->from('pensiun p');
+            $this->db->join('user u', 'p.id_user = u.id_user');
+            $this->db->join('golongan g', 'g.id_golongan = u.id_golongan');
+            $this->db->where_not_in('p.status_pengajuan', 'MENUNGGU KONFIRMASI');
+
+            if ($bln !== "all") {
+                $this->db->where('month(p.tgl_pengajuan)', $bln);
+            }
+
+            if ($thn !== "all") {
+                $this->db->where('year(p.tgl_pengajuan)', $thn);
+            }
+
+            if ($status !== "all") {
+                $this->db->where('p.status_pengajuan', $status);
+            }
+
+            if ($gol !== "all") {
+                $this->db->where('g.id_golongan', $gol);
+            }
+
+            return $this->db->get()->result_array();
         }
-       
     }
     ?>

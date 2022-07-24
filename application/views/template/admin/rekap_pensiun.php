@@ -12,7 +12,6 @@
 					<div class="form-group col-md-3">
 						<label class="control-label">Tahun</label>
 						<select class="form-control" id="tahun" name="tahun">
-							<option value="">SEMUA</option>
 							<?php for ($i = $date; $i >= 2021; $i--) { ?>
 								<option value='<?php echo $i; ?>'> <?php echo $i; ?> </option>
 							<?php } ?>
@@ -21,7 +20,6 @@
 					<div class="form-group col-md-3">
 						<label class="control-label">Bulan</label>
 						<select class="form-control" id="bulan" name="bulan">
-							<option value="">SEMUA</option>
 							<option value='01'>Januari</option>
 							<option value='02'>Februari</option>
 							<option value='03'>Maret</option>
@@ -178,10 +176,10 @@
 	}
 
 	function cetak_rekap() {
-		bulan = $('#bulan').val();
-		tahun = $('#tahun').val();
-		status = $('#status').val();
-		gol = $('#nama_golongan').val();
+		bulan = $('#bulan').val() == "" ? "all" : $('#bulan').val();
+		tahun = $('#tahun').val() == "" ? "all" : $('#tahun').val()
+		status = $('#status').val() == "" ? "all" : $('#status').val();
+		gol = $('#nama_golongan').val() == "" ? "all" : $('#nama_golongan').val();
 
 		window.open("<?php echo base_url(); ?>CetakRekapPensiunController/getRekapPensiun/" + bulan + '/' + tahun + '/' + status + '/' + gol, '_blank');
 	}
