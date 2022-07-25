@@ -345,4 +345,9 @@ class AdminModel extends CI_Model
         $res = $this->db->query($sql);
         return $res->result_array();
     }
+
+    public function change_password($id, $pass) {
+        $sql = "UPDATE user SET password = '" . $pass . "' WHERE id_user = '" . $id . "'";
+        $res = $this->db->query($sql);
+    }
 }

@@ -196,4 +196,32 @@ class PegawaiController extends CI_Controller
         $result = $this->PegawaiModel->get_rekap_selesai_magang_userid($data);
         echo json_encode($result);
     }
+
+    public function change_password()
+    {
+        $session_data = $this->session->userdata('sess_pegawai');
+        $idUser = $session_data['id_user'];
+        $user = $this->AdminModel->get_pengguna_by_id($idUser);
+        
+        $oldpass = md5($this->input->post('oldpass'));
+        if ($oldpass != $user[0]['password']) {
+            echo "Password lama tidak sesuai!";
+            return;
+        }
+
+        if (!empty($this->input->post('newpass')) && strlen($this->input->post('newpass')) < 8) {
+            echo "Password baru minimal 8 karakter!";
+            return;
+        }
+
+        if ($this->input->post('newpass') != $this->input->post('confnewpass')) {
+            echo "Konfirmasi password baru tidak sesuai!";
+            return;
+        }
+
+        $this->AdminModel->change_password($idUser, md5($this->input->post('newpass')));
+
+        echo 'success';
+        return;
+    }
 }
