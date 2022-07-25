@@ -241,19 +241,6 @@ class AdminController extends CI_Controller
 
     public function terima_aju_pensiun()
     {
-        $idUser = $this->AdminModel->get_user_konfirmasi_aju_pensiun($this->input->post('id_pensiun'));
-        $dataUser = $this->AdminModel->get_pengguna_by_id($idUser[0]['id_user']);
-
-
-        $user['id_user'] = $dataUser[0]['id_user'];
-        $user['username'] = $dataUser[0]['username'];
-        $user['nip'] = $dataUser[0]['nip'];
-        $user['nama_pegawai'] = $dataUser[0]['nama_pegawai'];
-        $user['jabatan'] = $dataUser[0]['jabatan'];
-        $user['unit_kerja'] = $dataUser[0]['unit_kerja'];
-        $user['id_golongan'] = $dataUser[0]['id_golongan'];
-        $this->AdminModel->update_user_by_id($user);
-
         $data['id_pensiun'] = $this->input->post('id_pensiun');
         $data['tgl_asistentiga'] = $this->input->post('tgl_asistentiga');
         $data['tgl_disposisi_sekda'] = $this->input->post('tgl_disposisi_sekda');
