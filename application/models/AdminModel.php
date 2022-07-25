@@ -321,7 +321,7 @@ class AdminModel extends CI_Model
         $this->db->select('COUNT(u.id_user) AS rekap');
         $this->db->from('izin_belajar i');
         $this->db->join('user u', 'u.id_user = i.id_user');
-        $this->db->where('i.status_pengajuan', 'MENUNGGU KONFIRMASI');
+        $this->db->where_not_in('i.status_pengajuan', 'MENUNGGU KONFIRMASI');
         return $this->db->get()->result();
     }
 
@@ -331,7 +331,7 @@ class AdminModel extends CI_Model
         $this->db->from('pensiun p');
         $this->db->join('user u', 'p.id_user = u.id_user');
         $this->db->join('golongan g', 'u.id_golongan = g.id_golongan');
-        $this->db->where('p.status_pengajuan', 'MENUNGGU KONFIRMASI');
+        $this->db->where_not_in('p.status_pengajuan', 'MENUNGGU KONFIRMASI');
         return $this->db->get()->result();
     }
 

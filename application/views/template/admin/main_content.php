@@ -31,7 +31,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
 							<div class="h6 text-md font-weight-bold text-uppercase">
-								<h4 class="text-white font-weight-bold font-italic">Rekap Konfirmasi Izin Belajar</h4>
+								<h4 class="text-white font-weight-bold font-italic">Rekap Izin Belajar</h4>
 								<div>
 									<i class=" fas fa-clipboard-list fa-6x text-gray-100 mt-3" style="opacity: .5;"></i>
 								</div>
@@ -52,7 +52,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
 							<div class="h6 text-md font-weight-bold text-uppercase">
-								<h4 class="text-white font-weight-bold font-italic">Rekap Konfirmasi Pensiun</h4>
+								<h4 class="text-white font-weight-bold font-italic">Rekap Pensiun</h4>
 								<div>
 									<i class=" fas fa-clipboard-list fa-6x text-gray-100 mt-3" style="opacity: .5;"></i>
 								</div>
