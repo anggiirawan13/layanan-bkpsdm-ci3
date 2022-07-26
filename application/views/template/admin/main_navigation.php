@@ -111,7 +111,7 @@
 							<label>Konfirmasi Password Baru</label>
 							<input type="password" class="form-control" id="confnewpass" value="" name="confnewpass" required>
 						</div>
-						<button type="submit" class="btn btn-danger" name="btn_simpan" id="btn_simpan">Simpan</button>
+						<button type="submit" class="btn btn-danger" name="btn_change_password" id="btn_change_password">Simpan</button>
 					</form>
 				</div>
 			</div>
@@ -125,7 +125,7 @@
 <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.js"></script>
 <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
 <script>
-	$('#btn_simpan').click(function(e) {
+	$('#btn_change_password').click(function(e) {
 			e.preventDefault();
 			var update_data = $('#change_password_form').serialize();
 			$.ajax({
