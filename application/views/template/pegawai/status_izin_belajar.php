@@ -63,8 +63,8 @@
 						var surat_dinas ="<a href='"+berkas1+"' target='_blank'>surat dinas</a>";
 						var surat_humdis ="<a href='"+berkas2+"' target='_blank'>surat hukuman disiplin</a>";
 
-						var btn1 = '<a href="http://localhost/layanan_bkpsdm/CetakTerimaIzinBelajarController/terimaAjuIzinBelajar?id=' + data[i]['id_izin_belajar'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
-						var btn2 = '<a href="http://localhost/layanan_bkpsdm/CetakTolakIzinBelajarController/tolakAjuIzinBelajar?id=' + data[i]['id_izin_belajar'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
+						var btn1 = '<a href="' + base_url + '/CetakTerimaIzinBelajarController/terimaAjuIzinBelajar?id=' + data[i]['id_izin_belajar'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
+						var btn2 = '<a href="' + base_url + '/CetakTolakIzinBelajarController/tolakAjuIzinBelajar?id=' + data[i]['id_izin_belajar'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
 						var btn_tampil, txt1, txt2 ;
 
 						if (data[i]['status_pengajuan'] == "DITERIMA") {

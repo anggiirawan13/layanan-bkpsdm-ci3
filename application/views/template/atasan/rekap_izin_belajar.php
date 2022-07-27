@@ -141,8 +141,8 @@
 					var ijazah_terakhir = "<a href='" + berkas + "' target='_blank'>ijazah terakhir</a>";
 					var surat_dinas = "<a href='" + berkas1 + "' target='_blank'>surat dinas</a>";
 					var surat_humdis = "<a href='" + berkas2 + "' target='_blank'>surat hukuman disiplin</a>";
-					var btn1 = '<a href="http://localhost/layanan_bkpsdm/CetakTerimaIzinBelajarController/terimaAjuIzinBelajar?id=' + result[i]['id_izin_belajar'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
-					var btn2 = '<a href="http://localhost/layanan_bkpsdm/CetakTolakIzinBelajarController/tolakAjuIzinBelajar?id=' + result[i]['id_izin_belajar'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
+					var btn1 = '<a href="' + base_url + '/CetakTerimaIzinBelajarController/terimaAjuIzinBelajar?id=' + result[i]['id_izin_belajar'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
+					var btn2 = '<a href="' + base_url + '/CetakTolakIzinBelajarController/tolakAjuIzinBelajar?id=' + result[i]['id_izin_belajar'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
 					var btn_tampil;
 					if (result[i]['status_pengajuan'] === "DITERIMA") {
 						btn_tampil = btn1;
@@ -199,8 +199,8 @@
 						var ijazah_terakhir = "<a href='" + berkas + "' target='_blank'>ijazah terakhir</a>";
 						var surat_dinas = "<a href='" + berkas1 + "' target='_blank'>surat dinas</a>";
 						var surat_humdis = "<a href='" + berkas2 + "' target='_blank'>surat hukuman disiplin</a>";
-						var btn1 = '<a href="http://localhost/layanan_bkpsdm/CetakTerimaIzinBelajarController/terimaAjuIzinBelajar?id=' + result[i]['id_izin_belajar'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
-						var btn2 = '<a href="http://localhost/layanan_bkpsdm/CetakTolakIzinBelajarController/tolakAjuIzinBelajar?id=' + result[i]['id_izin_belajar'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
+						var btn1 = '<a href="' + base_url + '/CetakTerimaIzinBelajarController/terimaAjuIzinBelajar?id=' + result[i]['id_izin_belajar'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
+						var btn2 = '<a href="' + base_url + '/CetakTolakIzinBelajarController/tolakAjuIzinBelajar?id=' + result[i]['id_izin_belajar'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
 						var btn_tampil;
 
 						if (result[i]['status_pengajuan'] === "DITERIMA") {

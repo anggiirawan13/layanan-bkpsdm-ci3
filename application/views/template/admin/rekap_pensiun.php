@@ -145,7 +145,7 @@
 					var akte_anak = "<a href='" + berkas1 + "' target='_blank'>Akte Anak</a>";
 					var buku_nikah = "<a href='" + berkas2 + "' target='_blank'>Buku Nikah</a>";
 
-					var btn1 = '<a href="http://localhost/layanan_bkpsdm/CetakTerimaPensiunController/terimaAjuPensiun?id=' + data[i]['id_pensiun'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
+					var btn1 = '<a href="' + base_url + '/CetakTerimaPensiunController/terimaAjuPensiun?id=' + data[i]['id_pensiun'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
 					var btn_tampil;
 
 					if (data[i]['status_pengajuan'] === "DITERIMA") {
@@ -205,7 +205,7 @@
 						var akte_anak = "<a href='" + berkas1 + "' target='_blank'>Akte Anak</a>";
 						var buku_nikah = "<a href='" + berkas2 + "' target='_blank'>Buku Nikah</a>";
 
-						var btn1 = '<a href="http://localhost/layanan_bkpsdm/CetakTerimaPensiunController/terimaAjuPensiun?id=' + data[i]['id_pensiun'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
+						var btn1 = '<a href="' + base_url + '/CetakTerimaPensiunController/terimaAjuPensiun?id=' + data[i]['id_pensiun'] + '" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size:5;"><i class="fa fa-download"></i> Report</a>';
 						var btn_tampil;
 
 						if (data[i]['status_pengajuan'] === "DITERIMA") {
